@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import { BtnCellRenderer } from './btn-cell-renderer.component';
-import * as $ from 'jquery';
+import * as $ from 'jquery'; 
 
 import { CheckboxRenderer } from './checkbox-renderer.component';
 
 declare let $: any;
+
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html'
