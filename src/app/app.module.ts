@@ -9,14 +9,15 @@ import { AppComponent } from './app.component';
 
 import { BtnCellRenderer } from './btn-cell-renderer.component';
 
+import { CheckboxRenderer } from './checkbox-renderer.component';
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AgGridModule.withComponents([BtnCellRenderer]),
+    AgGridModule.withComponents([BtnCellRenderer,CheckboxRenderer]),
   ],
-  declarations: [AppComponent, BtnCellRenderer],
+  declarations: [AppComponent, BtnCellRenderer,CheckboxRenderer],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

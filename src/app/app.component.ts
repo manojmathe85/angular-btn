@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-
+import * as $ from 'jquery';
 import { BtnCellRenderer } from './btn-cell-renderer.component';
+
+import { CheckboxRenderer } from './checkbox-renderer.component';
+
 declare let $: any;
 @Component({
   selector: 'my-app',
@@ -27,6 +30,10 @@ export class AppComponent {
       },
       minWidth: 150
     },
+    {        headerName: "Selection",
+        field: "registered",
+        cellRenderer: "checkboxRenderer"
+      },
     {
       headerName: 'Error Code',
       field: 'ErrorCode',
@@ -170,7 +177,8 @@ export class AppComponent {
   ];
 
   frameworkComponents = {
-    bttnCellRenderer: BtnCellRenderer
+    bttnCellRenderer: BtnCellRenderer,
+    checkboxRenderer: CheckboxRenderer
   };
   // [ {field: 'make',sortable:true,filter:true,editable:true},,
   // {field: 'model',sortable:true,filter:true,editable:true},,
@@ -897,8 +905,8 @@ export class AppComponent {
     }
   ];
   onRowClicked(event: any) {
-    console.log('row', event);
-
+    console.log('row', event);    
+              alert(`${ event.data.AccountNumber} says "${ event.data.ErrorCode }!`);
     $('#imagemodal').modal('show');
   }
   // [
