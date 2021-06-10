@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-import * as $ from 'jquery';
 import { BtnCellRenderer } from './btn-cell-renderer.component';
+import * as $ from 'jquery';
 
 import { CheckboxRenderer } from './checkbox-renderer.component';
 
@@ -25,6 +25,7 @@ export class AppComponent {
       cellRenderer: 'bttnCellRenderer',
       cellRendererParams: {
         clicked: function(field: any) {
+              $('#imagemodal').modal('show');
           onRowClicked(field);
         }
       },
